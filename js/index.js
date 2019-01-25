@@ -13,7 +13,4 @@ layui.define(['element', 'form', 'laypage', 'jquery', 'laytpl'], function (expor
   $("#mobile-nav").on('click', function () {
     $("#pop-nav").toggle();
   });
-
-  //输出test接口
-  exports('index', {});
 });  
