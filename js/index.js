@@ -24,7 +24,6 @@ layui.define(['element', 'form', 'laypage', 'jquery', 'laytpl'], function (expor
     $("#pop-nav").toggle();
   });
 
-
-//输出test接口
-exports('index', {});
+  //输出test接口
+  exports('index', {});
 });  
