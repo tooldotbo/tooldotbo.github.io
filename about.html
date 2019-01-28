@@ -11,23 +11,32 @@
 <body>
     <nav class="navbar">
         <div class="layui-container">
-            <div class="layui-row header pull-left">
+            <div class="header">
                 <div class="header-wrap">
-                    <div class=" logo">
+                    <div class="logo pull-left">
                         <a href="index.html">
                             <img src="images/logo.png" alt="" class="logo-img">
                             <span class="logo-text">工具箱</span>
                         </a>
                     </div>
+                    <div class="nav pull-left">
+                        <ul class="layui-nav">
+                            <li class="layui-nav-item"><a href="index.html">首页</a></li>
+                            <li class="layui-nav-item"><a href="about.html">关于</a></li>
+                        </ul>
+                    </div>
+                    <div class="mobile-nav pull-right" id="mobile-nav">
+                        <a href="javascript:;">
+                            <i class="layui-icon layui-icon-more-vertical"></i>
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <div class="nav pull-left">
-                <ul class="layui-nav pull-left">
-                    <li class="layui-nav-item"><a href="index.html">首页</a></li>
-                    <li class="layui-nav-item"><a href="about.html">关于</a></li>
+                <ul class="pop-nav" id="pop-nav">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="about.html">关于</a></li>
                 </ul>
-
             </div>
+
             <!--<div class="blog-nav pull-right">
                 <a href="#" class="personal pull-left">
                     <i class="layui-icon layui-icon-username"></i>
