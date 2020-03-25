@@ -397,9 +397,6 @@ icon {
     margin: 0 auto 20px
 }
 
-#header-right {
-    font-size: 1rem
-}
 
 #logobox {
     height: 100%;
@@ -407,7 +404,7 @@ icon {
 }
 
 #logo {
-    background: url("logo.svg") no-repeat 0;
+    background: url("//www.tool.bo/images/logo.png") no-repeat 0;
     background-size: 60%;
     display: inline-block;
     width: 200px;
@@ -502,18 +499,6 @@ icon {
         color: #545454
     }
 
-#footer-qqgroups {
-    display: flex;
-    flex-direction: row
-}
-
-    #footer-qqgroups dt {
-        font-size: 22px
-    }
-
-    #footer-qqgroups dd, #footer-qqgroups dt {
-        line-height: 20px
-    }
 
 .page-loading {
     position: fixed;
