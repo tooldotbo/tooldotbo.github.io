@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>图片在线转换Base64,图片编码base64</title>
+    <meta charset="utf-8">
+    <meta name="google" content="notranslate">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="keywords" content="图片在线转换Base64,图片转base64,文件转Base64">
+    <meta name="description" content="DataURI、PNG转换Base64，GIF转换Base64，JPEG转换Data64，Base64在线转换，图片转DataURI,图片编码base64">
+    <link rel="shortcut icon" type="image/x-icon" href="//www.tool.bo/favicon.ico">
+    <link rel="stylesheet" href="css/base64.css">
+</head>
+<body id="base64">
+    <div id="header">
+        <div id="logobox">
+            <a href="/imgbase64" id="logo" title="图片在线转换Base64"></a>
+            <span id="beta">beta</span>
+        </div>
+    </div>
+    <div id="centerContainer">
+        <div id="sidebar">
+
+            <ul>
+                <!-- <li> -->
+                    <!-- <dl> -->
+                        <!-- <dt>JS压缩、格式化</dt> -->
+                        <!-- <dd class="selected"><a href="/tools/compressor.html?tab=uglifyjs"><strong>UglifyJS</strong> Compress\Format</a></dd> -->
+                        <!-- <dd><a href="/tools/compressor.html?tab=babel"><strong>Babel</strong> Minify and ES6-&gt;ES5 </a></dd> -->
+                        <!-- <dd><a href="/tools/compressor.html?tab=closureCompiler">Google Closure Compiler</a></dd> -->
+                        <!-- <dd><a href="/tools/compressor.html?tab=yui">YUI compressor</a></dd> -->
+                        <!-- <dd><a href="/tools/compressor.html?tab=jspacker"><strong>Jspacker</strong> 混淆\解密</a></dd> -->
+                        <!-- <dd><a href="/tools/compressor.html?tab=jsmin">Jsmin</a></dd> -->
+                    <!-- </dl> -->
+                <!-- </li> -->
+                <li class="selected"><a href="/tools/base64.html">文件转 <strong>Base64</strong></a></li>
+                <!-- <li><a href="/tools/rgba.html"><strong>RGBA</strong>&amp;<strong>Hex</strong> 颜色转换</a></li> -->
+                <!-- <li><a href="/tools/unicode.html"><strong>Unicode</strong> 编码&amp;解码</a></li> -->
+                <!-- <li><a href="http://tool.css-js.com/">More ...</a></li> -->
+            </ul>
+
+        </div>
+        <div id="main">
+
+            <h1>文件转 Base64</h1>
+            <div id="dragarea-filetypes">支持 PNG、GIF、JPG、SVG、PSD、BMP、ICO、TTF、WOFF、EOT 等格式</div>
+
+            <div id="dragarea">
+                <span><icon></icon>拖动文件到此区域</span> <button class="btn vigorous">或点此选择文件</button><span>放开鼠标开始转码</span>
+            </div>
+
+            <div class="warningbox">
+                <icon></icon>本工具不限制文件大小，但是为了平衡在生产环境中的效率，一般单个图片文件不要超过100K。
+            </div>
+            <div id="base64TranslistContainer"><div data-reactroot="" class="base64-translist"></div></div>
+            <div id="base64Desc">
+                <p><strong>DataURI</strong> 允许在HTML文档中嵌入小文件，可以使用 <strong>img</strong> 标签或 <strong>CSS</strong> 嵌入转换后的 <strong>Base64</strong> 编码，减少 <strong>HTTP</strong> 请求，加快小图像的加载时间。</p>
+                <p>经过<strong>Base64</strong> 编码后的文件体积一般比源文件大 <strong>30%</strong> 左右。</p>
+            </div>
+            <div>
+<pre><span class="c_comment">// Base64 在CSS中的使用</span>
+<span class="c_cssselector">.box{</span>
+                <span class="c_csspropname">background-image: url("</span><span class="pre-propvalue">data:image/jpg;base64,/9j/4QMZR...</span><span class="c_csspropname">");</span>
+<span class="c_cssselector">}</span>
+<span class="c_comment">// Base64 在HTML中的使用</span>
+<span class="c_htmltag">&lt;img <span class="c_htmlpropname">src="</span><span class="c_htmlpropvalue">data:image/jpg;base64,/9j/4QMZR...</span><span class="c_htmlpropname">"</span> /&gt;</span></pre>
+            </div>
+            <div id="base64BrowserSupport">
+                <h2>支持Base64(DataURI)的浏览器</h2>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td rowspan="2"><icon></icon></td>
+                            <td class="browserName">Chrome 4+</td>
+                            <td rowspan="6"></td>
+                        </tr>
+                        <tr>
+                            <td class="browserName">Android Chrome 57+</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2"><icon></icon></td>
+                            <td class="browserName">Firefox 2+</td>
+                        </tr>
+                        <tr>
+                            <td class="browserName">Android Firefox 52+</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2"><icon></icon></td>
+                            <td class="browserName">Safari 3.1+</td>
+                        </tr>
+                        <tr>
+                            <td class="browserName">IOS Safari 3.2+</td>
+                        </tr>
+                        <tr>
+                            <td><icon></icon></td>
+                            <td class="browserName">Opera 9+</td>
+                            <td>Opera9~11 限制为 64K</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2"><icon></icon></td>
+                            <td class="browserName">IE 8+</td>
+                            <td>IE8 限制为 32KB</td>
+                        </tr>
+                        <tr>
+                            <td class="browserName">Mobile IE10+ </td>
+                            <td rowspan="4"></td>
+                        </tr>
+                        <tr>
+                            <td><icon></icon></td>
+                            <td class="browserName">Edge12+</td>
+                        </tr>
+                        <tr>
+                            <td><icon></icon></td>
+                            <td class="browserName">Android UC11+ </td>
+                        </tr>
+                        <tr>
+                            <td><icon></icon></td>
+                            <td class="browserName">QQ Browser1.2+</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+    <div id="footer">
+        <div id="footer-about">
+            <span>© 2020 tool.bo</span>
+        </div>
+    </div>
+    <script>
+        if (window.navigator.userAgent.indexOf('Trident/') > -1) {
+            document.write('<scrip' + 't src="js/polyfill.min.js"></scrip' + 't>');
+        }
+        if (!(window.FileReader && window.FormData)) {
+            document.body.style.overflow = 'hidden';
+            document.write('<div id="browserNotSupport"><div><h1>您当前的浏览器版本太低！</h1><h3>请使用Chrome、Firefox等现代浏览器</h3></div></div>');
+        }
+    </script>
+    <script src="js/jquery.js"></script>
+    <script src="js/commons-chunk.js"></script>
+    <script src="js/base64.js"></script>
+    <form style="display: none;">
+        <input type="file" multiple="true" name="files">
+    </form>
+    <span style="display:none">
+    </span>
+
+
+</body>
+</html>
